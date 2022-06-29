@@ -1,0 +1,189 @@
+@charset "UTF-8";
+/* =============================
+共通
+============================= */
+.contact-wrapper {
+  max-width: 730px;
+}
+
+/* =============================
+fv
+============================= */
+.sub-fv .fv__img {
+  background-image: url(../img/heading-img_contact.jpg);
+}
+
+/* =============================
+contact
+============================= */
+.contact__text {
+  font-family: "Noto Sans JP", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, Meiryo, sans-serif;
+  letter-spacing: 0.004em;
+  line-height: 2;
+  margin: 120px 0 55px;
+}
+
+/* form ------------- */
+.contact__form {
+  font-family: "Noto Sans JP", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, Meiryo, sans-serif;
+  letter-spacing: 0.004em;
+  margin-bottom: 120px;
+}
+
+.form__row {
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: column;
+}
+.form__row:last-of-type {
+  margin-bottom: 0;
+}
+.form__row .form__kinds,
+.form__row label {
+  display: inline-block;
+}
+.form__row .form__radio-box,
+.form__row input,
+.form__row textarea,
+.form__row .privacy-box {
+  margin-top: 10px;
+}
+.form__row input,
+.form__row textarea {
+  border: 1px solid #333333;
+}
+.form__row > input {
+  height: 40px;
+}
+.form__row textarea {
+  height: 210px;
+}
+
+.required {
+  font-size: 1.2rem;
+  color: #FFF;
+  background: #333333;
+  padding: 3px 5px;
+  margin-left: 10px;
+}
+
+.form__radio-box label {
+  margin-right: 50px;
+}
+.form__radio-box label input {
+  margin-right: 15px;
+}
+
+.privacy__title {
+  font-family: "Montserrat", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, Meiryo, sans-serif;
+  font-weight: bold;
+}
+.privacy-box {
+  border: 1px solid #333333;
+  padding: 10px;
+  height: 250px;
+  overflow-y: scroll;
+}
+.privacy__text {
+  line-height: 1.5;
+}
+
+.form__agree {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form__agree input {
+  width: 20px;
+  height: 20px;
+}
+.form__agree--text {
+  margin-left: 10px;
+}
+
+.form__submit {
+  text-align: center;
+}
+.form__submit input {
+  font-size: 1.4rem;
+  font-family: "Montserrat", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, Meiryo, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.015em;
+  color: #FFF;
+  background: #333333;
+  border: 1px solid #333333;
+  padding: 10px 65px;
+}
+
+/* =======================================
+TAB
+======================================= */
+@media screen and (max-width: 768px) {
+  /* =============================
+  contact
+  ============================= */
+  /* form ------------- */
+  .contact__form {
+    margin-bottom: 200px;
+  }
+
+  .form__row {
+    margin-bottom: 40px;
+  }
+  .form__row > input {
+    height: 50px;
+  }
+  .form__row textarea {
+    height: 180px;
+  }
+
+  .privacy-box {
+    height: 230px;
+  }
+}
+/* =======================================
+SP
+======================================= */
+@media screen and (max-width: 375px) {
+  /* =============================
+  contact
+  ============================= */
+  .contact__text {
+    margin: 80px 0 50px;
+    font-size: 1.4rem;
+    line-height: 1.7;
+  }
+
+  /* form ------------- */
+  .contact__form {
+    margin-bottom: 80px;
+  }
+
+  .form__radio-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .form__radio-box label {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+  .form__radio-box label:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .privacy__text,
+.form__agree--text {
+    font-size: 1.4rem;
+    line-height: 1.7;
+  }
+
+  .form__agree {
+    align-items: flex-start;
+  }
+  .form__agree input {
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,46 @@
+// =============================
+// 基本設定
+// =============================
+
+// フォント ------------
+// 見出し
+$font-title: 'Montserrat', "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic",  "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, Meiryo, sans-serif;
+// 見出し(小)
+$font-title_s: 'Noto Sans JP',"游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic",  "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, Meiryo, sans-serif;
+// 本文
+$font-p: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic",  "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, Meiryo, sans-serif;
+
+// 色 ------------
+// フォント(黒)
+$color-font: #333333;
+// フォント(白)
+$color-font_w: #FFF;
+// フォント(date)
+$color-font_date: #CECECE;
+// ボタン
+$color-btn: #000;
+// ナビゲーション背景
+$color-nav_bg: rgba(34, 34, 34, 0.95);
+// fv背景
+$color-fv_bg: #222222;
+// セクション背景
+$color-section_bg: #F0F0F0;
+// トップコンタクト背景
+$color-top-contact_bg: #F2F2F2;
+// フッター背景
+$color-footer_bg: #525252;
+// ボーダー
+$color-border: #DDD;
+
+// 幅 ------------
+// コンテンツ
+$width-wrapper: 1100px;
+// コンタクト コンテンツ
+$width-contact-wrapper: 730px;
+
+// 時間 ------------
+// ヘッダー
+$time-header: .3s;
+
+// 文字高さ ------------
+$line-height-: 1200px;

@@ -1,0 +1,4 @@
+// line-height ------------
+@function line-height ($size: 16, $line: 30) {
+  @return calc(round(calc($line / $size * 1000)) / 1000);
+}

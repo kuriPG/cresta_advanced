@@ -1,0 +1,200 @@
+@charset "UTF-8";
+/* =============================
+共通
+============================= */
+.content-text {
+  font-family: "Noto Sans JP", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, Meiryo, sans-serif;
+  line-height: 2;
+}
+
+/* =============================
+fv
+============================= */
+.sub-fv .fv__img {
+  background-image: url(../img/heading-img_about.jpg);
+}
+
+/* =============================
+vision
+============================= */
+.vision {
+  margin: 120px 0;
+  padding-left: 20%;
+}
+.vision__pickup {
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0.005em;
+  margin: 30px 0;
+}
+
+/* =============================
+ceo-message
+============================= */
+.ceo-message {
+  position: relative;
+  padding-top: 150px;
+}
+.ceo-message__img {
+  max-width: 420px;
+  width: 38%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ceo-message__img img {
+  width: 100%;
+  height: auto;
+}
+.ceo-message__content {
+  width: 770px;
+  max-width: 70%;
+  margin-left: auto;
+  padding: 120px 0 90px;
+  text-align: center;
+  background: #F0F0F0;
+}
+.ceo-message__content--inner {
+  display: inline-block;
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+}
+.ceo-message__text {
+  margin-top: 30px;
+}
+
+/* =============================
+company
+============================= */
+.company {
+  margin: 120px 0;
+}
+.company__title-box {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #DDD;
+}
+.company__desc {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 0 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.company__desc dt,
+.company__desc dd {
+  letter-spacing: 0.004em;
+  padding: 20px 0;
+  border-bottom: 1px solid #DDD;
+}
+.company__desc dt {
+  font-weight: bold;
+  width: 25%;
+}
+.company__desc dd {
+  width: 75%;
+}
+.company__map {
+  height: 360px;
+  position: relative;
+}
+.company__map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =======================================
+TAB
+======================================= */
+@media screen and (max-width: 768px) {
+  /* =============================
+  vision
+  ============================= */
+  .vision {
+    margin: 80px 0;
+  }
+  .vision__pickup {
+    font-weight: normal;
+    margin-bottom: 35px;
+  }
+  .vision__text {
+    font-size: 1.4rem;
+  }
+
+  /* =============================
+  ceo-message
+  ============================= */
+  .ceo-message {
+    padding-top: 130px;
+  }
+  .ceo-message__img {
+    max-width: 100%;
+    width: 320px;
+  }
+  .ceo-message__content {
+    width: 80%;
+    padding: 110px 30px 80px;
+  }
+
+  /* =============================
+  company
+  ============================= */
+  .company {
+    margin: 80px 0;
+  }
+  .company__map {
+    height: 230px;
+  }
+}
+/* =======================================
+SP
+======================================= */
+@media screen and (max-width: 375px) {
+  /* =============================
+  vision
+  ============================= */
+  .vision {
+    padding-left: 0;
+  }
+  .vision__pickup {
+    font-size: 2.2rem;
+    letter-spacing: 0;
+  }
+
+  /* =============================
+  ceo-message
+  ============================= */
+  .ceo-message__img {
+    margin-left: -4%;
+  }
+  .ceo-message__content {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    padding: 130px 30px 80px;
+  }
+  .ceo-message__text {
+    font-size: 1.4rem;
+  }
+
+  /* =============================
+  company
+  ============================= */
+  .company__desc dt,
+.company__desc dd {
+    font-size: 1.4rem;
+  }
+  .company__desc dt {
+    font-weight: normal;
+    width: 50%;
+  }
+  .company__desc dd {
+    width: 50%;
+  }
+  .company__map {
+    height: 470px;
+  }
+}

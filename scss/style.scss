@@ -1,0 +1,525 @@
+@use "variable" as var;
+@use "function" as fun;
+
+/* =============================
+base
+============================= */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: var.$font-p;
+  font-size: 1.6rem;
+  color: var.$color-font;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: var.$color-font_w;
+}
+li {
+  list-style: none;
+}
+*,
+*::before,
+::before {
+  box-sizing: border-box;
+}
+
+/* コンテンツ ------------- */
+.wrapper {
+  width: 100%;
+  max-width: var.$width-wrapper;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* セクションタイトル ------------- */
+.section-title {
+  font-size: 3.2rem;
+  font-family: var.$font-title;
+  font-weight: bold;
+  letter-spacing: 0.068em;
+}
+/* ボタン ------------- */
+.btn {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-family: var.$font-title;
+  font-weight: bold;
+  letter-spacing: 0.012em;
+  background: var.$color-btn;
+  padding: 12px 40px;
+  margin-top: 30px;
+}
+
+/* =============================
+header
+============================= */
+.header {
+  font-family: var.$font-title;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  transition: var.$time-header;
+  &__logo {
+    svg {
+      fill: var.$color-font_w;
+    }
+  }
+}
+/* ハンバーガーメニュー ------------- */
+.header__hg-box {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.hg-btn {
+  display: block;
+  width: 22px;
+  height: 11px;
+  position: relative;
+}
+.bar {
+  width: 100%;
+  height: 2px;
+  display: block;
+  position: absolute;
+  left: 0;
+  background: var.$color-font_w;
+  transition: var.$time-header;
+  &__top {
+    top: 0;
+  }
+  &__mid {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__bottom {
+    bottom: 0;
+  }
+}
+.header__nav--text {
+  color: var.$color-font_w;
+  font-size: 1rem;
+  letter-spacing: 0.005em;
+  margin-left: 7px;
+  transition: var.$time-header;
+}
+/* ナビゲーション ------------- */
+.header__nav {
+  background: var.$color-nav_bg;
+  height: 900px;
+  position: fixed;
+  top: 0;
+  right: -36%;
+  width: 36%;
+  z-index: 1;
+  &--list {
+    text-align: center;
+    margin-top: 180px;
+    .symbol-logo {
+      margin-bottom: 40px;
+      svg {
+        fill: var.$color-font_w;
+      }
+    }
+    .nav--item {
+      margin-bottom: 30px;
+      a {
+        font-size: 2rem;
+        letter-spacing: 0.068em;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+/* fv後 ------------- */
+.js-fix.after-fv {
+  background: var.$color-font_w;
+  .header {
+    &__logo {
+      svg {
+        fill: var.$color-font;
+      }
+    }
+    &__hg-box {
+      .hg-btn {
+        .bar {
+          background: var.$color-font;
+        }
+      }
+    }
+    &__nav--text {
+      color: var.$color-font;
+    }
+  }
+}
+/* ハンバーガーメニュークリック後 ------------- */
+.header__hg-box.show-hg {
+  .hg-btn {
+    .bar {
+      background: var.$color-font_w !important;
+      &__top {
+        transform: translateY(5px) rotate(30deg);
+      }
+      &__mid {
+        opacity: 0;
+      }
+      &__bottom {
+        transform: translateY(-4px) rotate(-30deg);
+      }
+    }
+  }
+  .header__nav--text {
+    color: var.$color-font_w;
+  }
+}
+/* =============================
+fv
+============================= */
+.fv {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    var.$color-font_w 0%,
+    var.$color-font_w 50%,
+    var.$color-fv_bg 50%,
+    var.$color-fv_bg 100%
+  );
+  &__img {
+    width: 76%;
+    height: 86.5%;
+    background-image: url(../img/kv-img.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  &__content {
+    position: absolute;
+    top: 50%;
+    right: 15.5%;
+    transform: translateY(-75%);
+    color: var.$color-font_w;
+    font-weight: bold;
+  }
+  &__text-ja,
+  &__text-en-s {
+    font-size: 2rem;
+  }
+  &__text-en-s {
+    font-family: var.$font-title_s;
+    margin-bottom: 10px;
+  }
+  &__text-en-l {
+    font-size: 7.2rem;
+    font-family: var.$font-title;
+  }
+}
+/* 子ページ ------------- */
+.sub-fv {
+  height: 464px;
+  .fv {
+    &__img {
+      height: 83.4%;
+    }
+    &__content {
+      text-align: right;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      &--inner {
+        display: inline-block;
+        text-align: left;
+      }
+    }
+    &__text-en-l {
+      letter-spacing: 0.0063em;
+    }
+    &__text-ja {
+      font-family: var.$font-title_s;
+      font-weight: normal;
+      letter-spacing: 0.005em;
+    }
+  }
+}
+/* =============================
+top-about
+============================= */
+.top-about {
+  margin-top: 120px;
+  width: 100%;
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 110px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var.$color-section_bg;
+    z-index: -1;
+  }
+  &__inner {
+    background-image: url(../img/about-img.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 110px 0 110px 50px;
+  }
+  &__content {
+    width: 590px;
+    background: var.$color-font_w;
+    padding: 50px 30px;
+  }
+  &__text {
+    margin-top: 30px;
+    line-height: 2;
+  }
+}
+/* =============================
+works/culture
+============================= */
+.section-bg {
+  background: var.$color-section_bg;
+  padding: 80px 0 60px;
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.works {
+  margin-right: 60px;
+}
+.works img,
+.culture img {
+  max-width: 520px;
+  width: 100%;
+  margin: 30px 0;
+}
+/* =============================
+topics
+============================= */
+.topics {
+  margin: 60px auto;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &__list {
+    max-width: 100%;
+    width: 700px;
+    &--row {
+      border-bottom: 1px solid var.$color-border;
+      padding: 32px 0 12px;
+    }
+    &--date {
+      color: var.$color-font_date;
+      font-family: var.$font-title;
+      font-weight: bold;
+      font-size: 1rem;
+      letter-spacing: 0.015em;
+    }
+    &--text {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 0.004em;
+      margin-top: 13px;
+    }
+  }
+}
+/* =============================
+top-contact
+============================= */
+.top-contact {
+  background: var.$color-top-contact_bg;
+  &__inner-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 15px 120px;
+  }
+  &__content {
+    width: 40%;
+  }
+  &__text {
+    margin-top: 30px;
+    line-height: 2;
+  }
+  &__img {
+    width: 52.7%;
+  }
+}
+/* =============================
+footer
+============================= */
+.footer {
+  background: var.$color-footer_bg;
+  text-align: center;
+  padding: 20px 0;
+}
+.copyright {
+  color: var.$color-font_w;
+  font-size: 1rem;
+  letter-spacing: 0.015;
+}
+
+/* =======================================
+TAB
+======================================= */
+@media screen and (max-width: 768px) {
+  /* =============================
+  base
+  ============================= */
+  /* コンテンツ ------------- */
+  .wrapper {
+    padding: 0 4%;
+  }
+  /* =============================
+  fv
+  ============================= */
+  .fv {
+    &__img {
+      width: 78%;
+      height: 87%;
+      background-image: url(../img/kv-img_sp.jpg);
+    }
+    &__content {
+      right: 11.5%;
+    }
+    &__text-ja,
+    &__text-en-s {
+      font-size: 1.6rem;
+    }
+    &__text-en-l {
+      font-size: 5.6rem;
+    }
+  }
+  /* =============================
+  top-about
+  ============================= */
+  .top-about {
+    margin-top: 80px;
+    &__inner {
+      padding: 60px 89px;
+    }
+    &__content {
+      padding: 40px 30px;
+    }
+  }
+  /* =============================
+  works/culture
+  ============================= */
+  .section-bg {
+    padding: 60px 0 40px;
+    .wrapper {
+      flex-direction: column;
+    }
+  }
+  .culture {
+    margin-top: 80px;
+  }
+  /* =============================
+  topics
+  ============================= */
+  .topics {
+    margin: 40px auto;
+    &__content {
+      align-items: flex-start;
+    }
+  }
+  /* =============================
+  top-contact
+  ============================= */
+  .top-contact {
+    &__inner-box {
+      padding: 40px 4% 80px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__content {
+      order: 2;
+      max-width: 510px;
+      width: 100%;
+      margin-top: 30px;
+    }
+    &__img {
+      order: 1;
+      max-width: 520px;
+      width: 100%;
+    }
+  }
+}
+
+/* =======================================
+SP
+======================================= */
+@media screen and (max-width: 375px) {
+  /* =============================
+  header
+  ============================= */
+  .header__nav {
+    width: 50%;
+    right: -50%;
+  }
+  /* =============================
+  top-about
+  ============================= */
+  .top-about {
+    &__inner {
+      padding: 50px 4%;
+    }
+    &__content {
+      padding: 50px 30px;
+      width: 100%;
+    }
+  }
+  /* =============================
+  works/culture
+  ============================= */
+  .section-bg {
+    padding: 40px 0;
+  }
+  .culture {
+    margin-top: 40px;
+  }
+  /* =============================
+  topics
+  ============================= */
+  .topics {
+    &__list {
+      &--row {
+        padding: 22px 0 10px;
+        &:first-of-type {
+          padding-top: 32px;
+        }
+      }
+      &--text {
+        font-size: 1.2rem;
+        margin-top: 11px;
+      }
+    }
+  }
+  /* =============================
+  top-contact
+  ============================= */
+  .top-contact {
+    &__inner-box {
+      padding-bottom: 40px;
+    }
+  }
+}
